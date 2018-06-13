@@ -1,5 +1,4 @@
 import {Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
-import {selector} from 'rxjs/operator/publish';
 
 @Component({
   selector: 'pm-star',
