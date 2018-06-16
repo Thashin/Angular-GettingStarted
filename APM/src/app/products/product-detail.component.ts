@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {IProduct} from './product';
-
+import { ActivatedRoute} from '@angular/router';
+import  { Router} from '@angular/router';
 
 
 @Component({
@@ -10,9 +11,14 @@ import {IProduct} from './product';
 export class ProductDetailComponent implements OnInit {
   pageTitle: string = 'Product Detail';
   product: IProduct;
-  constructor() { }
+  constructor(private _route: ActivatedRoute, private _router: Router) {
 
-  ngOnInit() {
   }
 
+  ngOnInit() {
+    let id = +this._route.snapshot.queryParamMap.get('id');
+  }
+  onBack(): void{
+    this._router.navigate(['/products']);
+  }
 }
